@@ -78,6 +78,9 @@ Array.prototype.forEach.call(buttons, function(button)
     else if (button.textContent === "MSG") {
       msg();
     }
+    else if (button.textContent === "exp") {
+      exp();
+    } 
     
      else if (button.textContent === "radians") {
       radians();
