@@ -1,6 +1,9 @@
 var display = document.getElementById("output");
 var buttons = document.getElementsByClassName("button");
 
+// Taken the forEach function from Array.prototype and call it on buttons, 
+// which is a non-Array object, with some function as its argument.
+
 Array.prototype.forEach.call(buttons, function(button) 
 {
   button.addEventListener("click", function() {
@@ -30,9 +33,7 @@ Array.prototype.forEach.call(buttons, function(button)
      else if (button.textContent === "÷") {
       divide();
     }
-    else if (button.textContent === "n!") {
-      divide();
-    }  else if (button.textContent === "+/-") {
+      else if (button.textContent === "+/-") {
       plusMinus();
     } else if (button.textContent === "<=") {
       backspace();
@@ -96,7 +97,7 @@ function checkLength() {
     display.value = "Overload Error";
   }
 }
-
+// If eval fails to parse a string then It will give a Syntax Error
 function syntaxError() {
   if (eval(display.value) == SyntaxError) {
     display.value = "Syntax Error";
@@ -104,11 +105,13 @@ function syntaxError() {
 }
 
 function equals() {
+  // In the case of Exponent we need to seperate the left and right side of " ^ " symbol to process
   if ((display.value).indexOf("^") > -1) {
     var base = (display.value).slice(0, (display.value).indexOf("^"));
     var exponent = (display.value).slice((display.value).indexOf("^") + 1);
     display.value = eval("Math.pow(" + base + "," + exponent + ")");
   } else {
+    // In other other cases
     display.value = eval(display.value);
     checkLength();
     syntaxError();
