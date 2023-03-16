@@ -19,10 +19,8 @@ Array.prototype.forEach.call(buttons, function(button)
     } else if (button.textContent === "=") {
       equals();
     }
-    if (display.length >= 3) {
-      display.value = "Overload Error";
-    }
-   else if (button.textContent === "C") {
+    
+    else if (button.textContent === "C") {
       clear();
     } else if (button.textContent === "x") {
       multiply();
