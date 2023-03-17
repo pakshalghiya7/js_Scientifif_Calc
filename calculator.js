@@ -9,11 +9,13 @@ Array.prototype.forEach.call(buttons, function(button)
   button.addEventListener("click", function() {
     if (button.textContent != "=" && button.textContent != "C" && button.textContent != "x" 
     && button.textContent != "÷" && button.textContent != "sqrt" && button.textContent != "sq" 
-    && button.textContent != "%" && button.textContent != "<=" && button.textContent != "+/-" 
-    &&button.textContent != "sin" && button.textContent != "cos" && button.textContent != "tan" 
-    &&button.textContent != "log" && button.textContent != "ln" && button.textContent != "^" 
-    && button.textContent != "n!" && button.textContent != "π" && button.textContent != "exp" 
-    && button.textContent != "radians" && button.textContent != "degrees") 
+    && button.textContent != "1/x" && button.textContent != "<=" && button.textContent != "+/-" 
+    && button.textContent != "sin" && button.textContent != "cos" && button.textContent != "tan" 
+    && button.textContent != "log" && button.textContent != "ln" && button.textContent != "^" 
+    && button.textContent != "n!" && button.textContent != "π" && button.textContent != "exp"
+    && button.textContent != "radians" && button.textContent != "degrees" &&  button.textContent != "MS" 
+    && button.textContent != "MC" &&  button.textContent != "M+" &&  button.textContent != "M-"
+    && button.textContent != "MR" &&  button.textContent != "mod" ) 
     {
       display.value += button.textContent;
     } else if (button.textContent === "=") {
@@ -35,8 +37,8 @@ Array.prototype.forEach.call(buttons, function(button)
       plusMinus();
     } else if (button.textContent === "<=") {
       backspace();
-    } else if (button.textContent === "%") {
-      percent();
+    } else if (button.textContent === "1/x") {
+      inverse();
     } else if (button.textContent === "π") {
       pi();
     } else if (button.textContent === "sq") {
@@ -55,8 +57,8 @@ Array.prototype.forEach.call(buttons, function(button)
       ln();
     } else if (button.textContent === "^") {
       exponent();
-    }
-    else if (button.textContent === "MS") {
+    } else if (button.textContent === "MS") {
+      
       MS();
     }
     else if (button.textContent === "MR") {
@@ -69,13 +71,12 @@ Array.prototype.forEach.call(buttons, function(button)
       Mminus();
     }
     else if (button.textContent === "MC") {
+
       MC();
     }
-     else if (button.textContent === "MC") {
-      MC();
-    }
-    else if (button.textContent === "MSG") {
-      msg();
+    
+    else if (button.textContent === "mod") {
+      mod();
     }
     else if (button.textContent === "exp") {
       exp();
@@ -117,6 +118,7 @@ function equals() {
 }
 
 function clear() {
+  
   display.value = "";
 }
 
@@ -131,9 +133,11 @@ function multiply() {
 function divide() {
   display.value = display.value + "/";
 }
+
 var mem;
 function MS()
 {
+ 
 mem=parseInt(display.value);
 clear();
 }
@@ -159,13 +163,14 @@ function MC()
 {
   
   mem=0;
+  display.value="0"
 
 }
 
-function msg()
+function mod()
 {
   
-  display.value= "WELCOME";
+  display.value = display.value + "%";
 
 }
 
@@ -205,8 +210,8 @@ function squareRoot() {
   display.value = Math.sqrt(display.value);
 }
 
-function percent() {
-  display.value = display.value / 100;
+function inverse() {
+  display.value = 1/display.value;
 }
 
 function sin() {
