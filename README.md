@@ -1,12 +1,13 @@
 # Scientific Calculator
 Static WebPage Link: https://pakshalghiya7.github.io/js_Scientifif_Calc/calculator.html
 
-![Screenshot from 2023-03-13 19-49-15](https://user-images.githubusercontent.com/125532012/224728921-7b258f45-8bd1-4563-815b-185c1fb235ef.png)
+<img width="1439" alt="Screenshot 2023-03-18 at 4 43 01 PM" src="https://user-images.githubusercontent.com/125532012/226101870-01807cd9-3d04-4937-8ce7-8f71a34cba62.png">
+
 * All functionalities are working which are shown In above Image 
 
 ### Errors/Exceptions handled:
 - Syntax error
 - Overload error
 - Undefined error
-- NAN
-- Infiniy
+- NAN(Eval Error)
+- Infiniy(Eval Error)
